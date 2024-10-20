@@ -83,7 +83,7 @@ read_abundance_atf4[newcolnames] <- sapply(read_abundance_atf4[newcolnames], as.
 # Save the cleaned abundance data to a CSV file
 write_csv(read_abundance_atf4, "/PATH/TO/OUTPUT/ATF4KD_abundance.csv")
 
-# Import filtered non-coding RNA data ()
+# Import filtered non-coding RNA except SNRP with BASH (“MIR-” “SNOR-” “LINC-” and “LNC-”)
 read_abundance_atf4 <- read.csv("/PATH/TO/INPUT/ATF4KD_abundance_filtered.csv")
 TableOfCounts_atf4 <- read_abundance_atf4[-c(1,3)]  # Remove first and third columns
 write_csv(TableOfCounts_atf4, "/PATH/TO/OUTPUT/TableOfCounts_ATF4KD_filtered.csv")
