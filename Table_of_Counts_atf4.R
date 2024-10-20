@@ -15,7 +15,8 @@ tx2gene <- na.omit(tx2gene)  # Remove any rows with missing values
 tx2gene  # View the resulting tx2gene DataFrame
 
 # Load Meta Data
-coldata_csv <- read_csv("/Users/kwshin/Documents/capstone/ATF4KO/salmon_quant/coldata.csv")
+coldata_csv <- read_csv("/PATH/TO/FILE/coldata.csv")
+samples_atf4 <- read.table("/PATH/TO/FILE/ATF4KO_sample.txt", header = TRUE)
 
 # Convert metadata to a DataFrame
 coldata_atf4 <- data.frame(
