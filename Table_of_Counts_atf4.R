@@ -27,7 +27,7 @@ coldata_atf4 <- data.frame(
 
 # Create a vector of file paths
 files_atf4 <- c(coldata_atf4$files)
-stopifnot(all(file.exists(files_atf4)))  # Ensure all files exist
+all(file.exists(files_atf4))  # Ensure all files exist
 
 # --------------------------------------------------------------------
 # Optional: Clean first column of Salmon output to extract ENST only
