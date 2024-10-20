@@ -1,11 +1,11 @@
 # Load Necessary Libraries
-library(biomaRt)      # BioMart data mining
+library(biomaRt)      
 library(TxDb.Hsapiens.UCSC.hg38.knownGene)  # UCSC known gene annotation for Homo sapiens
-library(readr)        # Reading and writing CSV files
-library(dplyr)        # Data manipulation
-library(tximport)     # Import transcript quantification data
-library(tibble)       # Data frame manipulation
-library(stringr)      # String manipulation
+library(readr)        
+library(dplyr)
+library(tximport)
+library(tibble)
+library(stringr)
 
 # Initialize variables for human gene annotations
 txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
