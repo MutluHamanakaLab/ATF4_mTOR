@@ -18,7 +18,6 @@ plotBCV(DEGall_mtor)
 
 qlf.wt_vs_tgfb <- glmQLFTest(fit, contrast = c(-1,1,0,0))
 qlf.wt_vs_tgfb$table$fdr <- p.adjust(qlf.wt_vs_tgfb$table$PValue,"fdr")
-write.csv(qlf.wt_vs_tgfb, "/PATH/TO/OUTPUT/qlf.wt_vs_tgfb.csv")
 
 wt_vs_tgfb<- as.data.frame(qlf.wt_vs_tgfb)
 row.names(wt_vs_tgfb) <- wt_vs_tgfb$Symbol
@@ -27,7 +26,7 @@ genes_2_label <- c("ADH1B","NPTX1","BDKRB2","TWSG1","AKR1C1","CTSK","FER1L6","BC
 wt_vs_tgfb_volcano <- EnhancedVolcano(wt_vs_tgfb,
     lab = rownames(wt_vs_tgfb),
     x = 'logFC',
-    y = 'PValue',
+    y = 'fdr',
     selectLab = genes_2_label,
     pCutoff = 0.05,
     FCcutoff = 1,
