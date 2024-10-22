@@ -21,7 +21,7 @@ genes_2_label <- c("MTHFD2","PSAT1","ASNS","PHGDH","GARS1","SLC6A9","SLC1A4","AA
 tgfb_vs_tgfb_torin_volcano <- EnhancedVolcano(tgfb_vs_tgfb_torin,
     lab = rownames(tgfb_vs_tgfb_torin),
     x = 'logFC',
-    y = 'PValue',
+    y = 'fdr',
     selectLab = genes_2_label,
     pCutoff = 0.05,
     FCcutoff = 1,
