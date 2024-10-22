@@ -4,7 +4,7 @@ library(tidyr)
 library(clusterProfiler)  
 
 # Filter significant genes from wt_vs_tgfb dataset
-Sig_wt_vs_tgfb <- subset.data.frame(wt_vs_tgfb, abs(logFC) >= 0.5 & fdr < 0.05) # wt_vs_tgfb From Figure_1B.R
+Sig_wt_vs_tgfb <- subset.data.frame(wt_vs_tgfb, fdr < 0.05) # wt_vs_tgfb From Figure_1B.R
 
 # Merge significant genes with count table based on gene symbol
 DEGmatrix_wt_vs_tgfb <- left_join(TableOfCounts_mtor, Sig_wt_vs_tgfb, by = "Symbol")
