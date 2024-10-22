@@ -21,7 +21,7 @@ gene_list_wt_vs_tgfb <- na.omit(original_gene_list_wt_vs_tgfb)
 gene_list_wt_vs_tgfb <- sort(gene_list_wt_vs_tgfb, decreasing = TRUE)
 gene_list_wt_vs_tgfb_df <- as.data.frame(gene_list_wt_vs_tgfb)
 
-# Save the ranked gene list for GSEA
+# Save the ranked gene list for GSEA for Figure 1C and 1D
 write.table(gene_list_wt_vs_tgfb_df, sep = "\t", quote = FALSE, row.names = TRUE, col.names = FALSE, "/PATH/TO/OUTPUT/GSEA_wt_vs_tgfb_logFC0.5.rnk")
 
 # Load organism-specific library
