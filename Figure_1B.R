@@ -6,7 +6,7 @@ library(ggplot2)
 
 ## Import Count Data
 # Read the filtered counts data
-TableOfCounts_mtor <- read.csv("/PATH/TO/FILE/TableOfCounts_mTOR_filtered.csv")
+TableOfCounts_mtor <- read.csv("/PATH/TO/FILE/TableOfCounts_mTOR_filtered.csv") # Table_of_Counts_mTOR.R
 
 # Read sample metadata
 samples_mtor <- read.table("/PATH/TO/FILE/TGFb_Torin_sample.txt", header = TRUE)
