@@ -1,6 +1,5 @@
 ## Load Necessary Libraries
 library(edgeR)
-library(dplyr)
 library(EnhancedVolcano)
 library(ggplot2)
 
