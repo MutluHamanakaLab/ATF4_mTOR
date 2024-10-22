@@ -13,8 +13,8 @@ tx2gene <- AnnotationDbi::select(txdb, k, "GENEID", "TXNAME")
 tx2gene <- na.omit(tx2gene)
 
 # Load read abundance data for ATF4 and mTOR from CSV files
-read_abundance_atf4 <- read.csv("/PATH/TO/THE/FILE/ATF4KD_abundance_filtered.csv")
-read_abundance_mtor <- read.csv("/PATH/TO/THE/FILE/mTOR_abundance_filtered.csv")
+read_abundance_atf4 <- read.csv("/PATH/TO/THE/FILE/ATF4KD_abundance_filtered.csv") # From Table_of_Counts_atf4.R
+read_abundance_mtor <- read.csv("/PATH/TO/THE/FILE/mTOR_abundance_filtered.csv") # From Table_of_Counts_mTOR.R
 
 # Remove Symbol and entrezgene_id columns to combine read_abundances
 read_abundance_atf4$Symbol <- NULL
