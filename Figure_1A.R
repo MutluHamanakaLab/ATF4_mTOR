@@ -1,10 +1,10 @@
 # Load Necessary Libraries
-library(dplyr)        # Data manipulation
-library(TxDb.Hsapiens.UCSC.hg38.knownGene)  # UCSC known gene annotation for Homo sapiens
-library(readr)        # Reading and writing CSV files
-library(edgeR)        # Differential expression analysis of RNA-Seq data
-library(sva)          # Surrogate Variable Analysis (for batch effects)
-library(ggplot2)      # Data visualization
+library(dplyr)
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+library(readr)
+library(edgeR)
+library(sva)
+library(ggplot2)
 
 # Initialize variables for human use
 txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
