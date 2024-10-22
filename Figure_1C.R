@@ -46,4 +46,4 @@ gse_HM_Sig_wt_vs_tgfb <- dotplot(HM_Sig_wt_vs_tgfb, showCategory = 15, split = "
   ggtitle("UT vs TGFb")
 
 # Save the plot as a PNG file
-ggsave("/PATH/TO/OUTPUT/HM_Sig_wt_vs_tgfb_adjusted.png", plot = gse_HM_Sig_wt_vs_tgfb, width = 8, height = 8, limitsize = FALSE)
+ggsave("/PATH/TO/OUTPUT/Figure-1C.png", plot = gse_HM_Sig_wt_vs_tgfb, width = 8, height = 8, limitsize = FALSE)
