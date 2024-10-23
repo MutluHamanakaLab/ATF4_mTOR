@@ -44,6 +44,9 @@ ann.colors_all_mTOR <- list(
   Treatment= c(`UT` = "red", `TGFb` = "blue", `Torin1`="yellow", `TGFb+Torin1`="green")
 )
 
+# Perform a quasi-likelihood F-test for differential expression
+qlf.tgfb_vs_tgfb_torin <- glmQLFTest(fit, contrast = c(0,-1,1,0)) # fit from Figure_1B.R
+
 ## Subset Significant Genes
 sig.qlf.tgfb_vs_tgfb_torin <- subset.data.frame(qlf.tgfb_vs_tgfb_torin, abs(logFC) >= 0.5 & PValue < 0.05)
 sig_G <- sig.qlf.tgfb_vs_tgfb_torin$Symbol
