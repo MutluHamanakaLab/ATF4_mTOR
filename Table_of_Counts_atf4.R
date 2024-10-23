@@ -1,11 +1,10 @@
 # Load Necessary Libraries
-library(biomaRt)      
 library(TxDb.Hsapiens.UCSC.hg38.knownGene)  # UCSC known gene annotation for Homo sapiens
-library(readr)        
-library(dplyr)
+library(readr)
 library(tximport)
-library(tibble)
-library(stringr)
+library(data.table)
+library(tidyverse)
+library(biomaRt)   
 
 # Initialize variables for human gene annotations
 txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
@@ -15,8 +14,11 @@ tx2gene <- na.omit(tx2gene)  # Remove any rows with missing values
 tx2gene  # View the resulting tx2gene DataFrame
 
 # Load Meta Data
-coldata_csv <- read_csv("/PATH/TO/FILE/coldata.csv")
-samples_atf4 <- read.table("/PATH/TO/FILE/ATF4KO_sample.txt", header = TRUE)
+coldata_csv <- read_csv("/PATH/TO/INPUT/coldata.csv")
+#> colnames(coldata_csv)
+#[1] "files"     "names"     "condition"
+
+samples_atf4 <- read.table("/PATH/TO/INPUT/ATF4KO_sample.txt", header = TRUE)
 
 # Convert metadata to a DataFrame
 coldata_atf4 <- data.frame(
@@ -74,7 +76,7 @@ read_abundance_atf4 <- read_abundance_atf4 %>% mutate(entrezgene_id = as.numeric
 read_abundance_atf4 <- left_join(id_map, read_abundance_atf4, by = "entrezgene_id")
 
 # Rename external_gene_name to Symbol
-read_abundance_atf4 <- read_abundance_atf4 %>% rename("external_gene_name" = "Symbol")
+read_abundance_atf4 <- read_abundance_atf4 %>% rename("Symbol" = "external_gene_name")
 
 # Remove duplicate symbols and set columns as numeric
 read_abundance_atf4 <- read_abundance_atf4[!duplicated(read_abundance_atf4$ensembl_gene_id), ]
@@ -84,7 +86,7 @@ read_abundance_atf4[newcolnames] <- sapply(read_abundance_atf4[newcolnames], as.
 # Save the cleaned abundance data to a CSV file
 write_csv(read_abundance_atf4, "/PATH/TO/OUTPUT/ATF4KD_abundance.csv")
 
-# Import filtered non-coding RNA except SNRP with BASH (“MIR-” “SNOR-” “LINC-” and “LNC-”)
+# Import filtered non-coding RNA with BASH (“MIR-” “SNOR-” “LINC-” and “LNC-”)
 read_abundance_atf4 <- read.csv("/PATH/TO/INPUT/ATF4KD_abundance_filtered.csv")
 TableOfCounts_atf4 <- read_abundance_atf4[-c(1,3)]  # Remove first and third columns
 write_csv(TableOfCounts_atf4, "/PATH/TO/OUTPUT/TableOfCounts_ATF4KD_filtered.csv")
