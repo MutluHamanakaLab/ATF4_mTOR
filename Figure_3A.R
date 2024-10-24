@@ -48,7 +48,7 @@ ann.colors_all_mTOR <- list(
 qlf.tgfb_vs_tgfb_torin <- glmQLFTest(fit, contrast = c(0,-1,1,0)) # fit from Figure_1B.R
 
 ## Subset Significant Genes
-sig.qlf.tgfb_vs_tgfb_torin <- subset.data.frame(qlf.tgfb_vs_tgfb_torin, abs(logFC) >= 0.5 & PValue < 0.05)
+sig.qlf.tgfb_vs_tgfb_torin <- subset.data.frame(qlf.tgfb_vs_tgfb_torin, abs(logFC) >= 0.5 & fdr < 0.05)
 sig_G <- sig.qlf.tgfb_vs_tgfb_torin$Symbol
 
 ## Generate Z-Score Matrix for Significant Genes
