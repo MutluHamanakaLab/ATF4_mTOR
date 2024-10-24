@@ -47,6 +47,9 @@ ann.colors_all_mTOR <- list(
 # Perform a quasi-likelihood F-test for differential expression
 qlf.tgfb_vs_tgfb_torin <- glmQLFTest(fit, contrast = c(0,-1,1,0)) # fit from Figure_1B.R
 
+# Adjust p-values for multiple testing using the False Discovery Rate (FDR)
+qlf.tgfb_vs_tgfb_torin$table$fdr <- p.adjust(qlf.tgfb_vs_tgfb_torin$table$PValue,"fdr")
+
 ## Subset Significant Genes
 sig.qlf.tgfb_vs_tgfb_torin <- subset.data.frame(qlf.tgfb_vs_tgfb_torin, abs(logFC) >= 0.5 & fdr < 0.05)
 sig_G <- sig.qlf.tgfb_vs_tgfb_torin$Symbol
