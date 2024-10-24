@@ -1,8 +1,8 @@
 ## Load Necessary Libraries
 library(dorothea)
-library(dplyr)
 library(decoupleR)
-library(OmnipathR)
+library(tidyverse)
+library(edgeR)
 library(ggplot2)
 
 ## Load Dorothea Regulons
