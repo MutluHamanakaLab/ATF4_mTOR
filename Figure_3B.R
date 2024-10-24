@@ -3,15 +3,9 @@ library(edgeR)
 library(EnhancedVolcano)
 library(ggplot2)
 
-# Perform a quasi-likelihood F-test for differential expression
-qlf.tgfb_vs_tgfb_torin <- glmQLFTest(fit, contrast = c(0,-1,1,0)) # fit from Figure_1B.R
-
-# Adjust p-values for multiple testing using the False Discovery Rate (FDR)
-qlf.tgfb_vs_tgfb_torin$table$fdr <- p.adjust(qlf.tgfb_vs_tgfb_torin$table$PValue,"fdr")
-
 ## Prepare Data for Visualization
 # Convert results to data frame
-tgfb_vs_tgfb_torin <- as.data.frame(qlf.tgfb_vs_tgfb_torin)
+tgfb_vs_tgfb_torin <- as.data.frame(qlf.tgfb_vs_tgfb_torin) # qlf.tgfb_vs_tgfb_torin from Figure_3A.R
 row.names(tgfb_vs_tgfb_torin) <- tgfb_vs_tgfb_torin$Symbol
 
 # Genes to label on the volcano plot
