@@ -22,7 +22,7 @@ gene_list_tgfb_vs_tgfb_torin<-sort(gene_list_tgfb_vs_tgfb_torin, decreasing = TR
 gene_list_tgfb_vs_tgfb_torin_df<- as.data.frame(gene_list_tgfb_vs_tgfb_torin)
 
 # Save the ranked gene list for GSEA for Figure 3C and 3D
-write.table(gene_list_tgfb_vs_tgfb_torin_df, sep = "\t", quote = FALSE, row.names =TRUE, col.names = FALSE, "/PATH/TO/OUTPUT/GSEA_tgfb_vs_tgfb_torin_logFC0.5.rnk")
+write.table(gene_list_tgfb_vs_tgfb_torin_df, sep = "\t", quote = FALSE, row.names =TRUE, col.names = FALSE, "/PATH/TO/OUTPUT/GSEA_tgfb_vs_tgfb_torin.rnk")
 
 # Load organism-specific library
 organism = "org.Hs.eg.db"
