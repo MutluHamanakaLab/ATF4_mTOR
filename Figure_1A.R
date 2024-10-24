@@ -1,10 +1,8 @@
 # Load Necessary Libraries
-library(dplyr)
 library(TxDb.Hsapiens.UCSC.hg38.knownGene)
 library(readr)
 library(edgeR)
 library(sva)
-library(ggplot2)
 
 # Initialize variables for human use
 txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
