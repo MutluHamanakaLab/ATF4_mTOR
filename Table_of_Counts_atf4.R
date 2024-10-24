@@ -18,8 +18,6 @@ coldata_csv <- read_csv("/PATH/TO/INPUT/coldata.csv")
 #> colnames(coldata_csv)
 #[1] "files"     "names"     "condition"
 
-samples_atf4 <- read.table("/PATH/TO/INPUT/ATF4KO_sample.txt", header = TRUE)
-
 # Convert metadata to a DataFrame
 coldata_atf4 <- data.frame(
   files=coldata_csv$files,
