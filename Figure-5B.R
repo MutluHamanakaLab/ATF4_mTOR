@@ -70,6 +70,9 @@ names(annotation) <- levels(level4.seurat)
 # Rename cluster identities using the annotations
 level4.seurat_3 <- RenameIdents(level4.seurat, annotation)
 
+# Set the cluster identities to the desired order
+Idents(level4.seurat_3) <- factor(Idents(level4.seurat_3), levels = c("Fibrotic", "Inflammatory", "Alveolar"))
+
 # Save the annotated Seurat object
 saveRDS(level4.seurat_3, "/PATH/TO/OUTPUT/level4.seurat_3.rds")
 
