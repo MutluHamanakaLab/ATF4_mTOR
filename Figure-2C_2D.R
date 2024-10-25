@@ -62,4 +62,15 @@ gse_RE_ctrl_tgfb_vs_atf4ko_tgfb <- dotplot(
 ) + facet_grid(. ~ .sign) + ggtitle("siControl_TGFb vs siATF4_TGFb")
 
 # Save the plot to a file
-ggsave("/PATH/TO/OUTPUT/Figure_2C.png", plot = gse_RE_ctrl_tgfb_vs_atf4ko_tgfb, width = 10, height = 5, limitsize = FALSE)
+ggsave("/PATH/TO/OUTPUT/Figure-2C.png", plot = gse_RE_ctrl_tgfb_vs_atf4ko_tgfb, width = 10, height = 5, limitsize = FALSE)
+
+## Create a cnetplot for the GSEA results
+cnet_RE_ctrl_tgfb_vs_atf4ko_tgfb <- cnetplot(
+  ctrl_tgfb_vs_atf4ko_tgfb_React,
+  showCategory = 13,
+  color.params = list(foldChange = react_gene_list_ctrl_tgfb_vs_atf4ko_tgfb),
+  font.size = 32
+) + ggtitle("siControl_TGFb vs siATF4_TGFb")
+
+# Save the cnetplot to a file
+ggsave("/PATH/TO/OUTPUT/Figure-2D.png", plot = cnet_RE_ctrl_tgfb_vs_atf4ko_tgfb, width = 6, height = 6, limitsize = FALSE)
