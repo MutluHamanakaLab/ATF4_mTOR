@@ -63,7 +63,7 @@ available_features <- rownames(level4.seurat_3)
 for (gene in GeneOfInterest_paper) {
   if (gene %in% available_features) {
     plot <- FeaturePlot(level4.seurat_3, features = gene, reduction = "umap", label = FALSE, order = TRUE)
-    ggsave(filename = paste0("/PATH/TO/OUTPUT/Figure-5_FeaturePlot", gene, ".png"), plot = plot, width = plot_width, height = plot_height)
+    ggsave(filename = paste0("/PATH/TO/OUTPUT/Figure-5_CDE_FeaturePlot", gene, ".png"), plot = plot, width = plot_width, height = plot_height)
   } else {
     message(paste("The gene", gene, "is missing."))
   }
