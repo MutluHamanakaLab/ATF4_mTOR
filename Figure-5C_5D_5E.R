@@ -5,6 +5,9 @@ library(ggplot2)
 ## Read Seurat Object
 level4.seurat_3 <- readRDS(file = "/PATH/TO/FILE/level4.seurat_3.rds")
 
+# Set the cluster identities to the desired order
+Idents(level4.seurat_3) <- factor(Idents(level4.seurat_3), levels = c("Fibrotic", "Inflammatory", "Alveolar"))
+
 ## Define Gene Sets
 # Genes related to ATF4 targets
 ATF4_target_paper <- c("ATF4", "PHGDH", "SHMT2", "ALDH18A1", "PYCR1", "AARS", "GARS", "WARS", "EIF4EBP1", "DDIT4")
