@@ -4,7 +4,7 @@ library(ggplot2)
 
 ## Read Seurat Object
 # Load the Seurat object
-level3.seurat <- readRDS("PATH/TO/FILE/fibroblast-lean-seurat-20240308.RDS")
+level3.seurat <- readRDS("PATH/TO/FILE/fibroblast-lean-seurat-20240308.RDS") # Processed fibroblast population as shown in supplementary figures. Original data from GSE135893
 
 ## Clustering Analysis
 # Perform clustering at a resolution of 0.2
