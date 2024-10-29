@@ -6,9 +6,6 @@ library(Seurat)
 # Load the Seurat object
 level4.seurat_3 <- readRDS("/PATH/TO/OUTPUT/level4.seurat_3.rds") #level4.seurat_3.rds from Figure-5B.R
 
-# Set the cluster identities to the desired order
-Idents(level4.seurat_3) <- factor(Idents(level4.seurat_3), levels = c("Fibrotic", "Inflammatory", "Alveolar"))
-
 ## Aggregate Expression Data
 # Create a new metadata column that combines cell type and sample name
 level4.seurat_3$celltype_x_sample <- paste(Idents(level4.seurat_3), level4.seurat_3$Sample_Name, sep = "_")
