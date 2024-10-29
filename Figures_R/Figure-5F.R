@@ -8,9 +8,6 @@ library(ggplot2)
 # Load the Seurat object
 level4.seurat_3 <- readRDS("/PATH/TO/FILE/level4.seurat_3.rds")
 
-# Set the cluster identities to the desired order
-Idents(level4.seurat_3) <- factor(Idents(level4.seurat_3), levels = c("Fibrotic", "Inflammatory", "Alveolar"))
-
 ## Network Analysis
 # Retrieve CollecTRI network data for human
 net_tri <- get_collectri(organism = 'human', split_complexes = FALSE)
